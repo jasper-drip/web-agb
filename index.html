@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAG Rechna AGB</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f9; /* Light gray background */
+            color: #333; /* Dark gray text */
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff; /* White content background */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #2c3e50; /* Darker blue-gray for title */
+            text-align: center;
+            margin-bottom: 10px; /* Reduced margin to bring lines closer */
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: space-around; /* Distributes space around items */
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            /* border-top: 1px solid #e0e0e0; */ /* Light gray border removed */
+            border-bottom: 1px solid #e0e0e0; /* Light gray border */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens if needed */
+        }
+
+        .image-placeholder {
+            width: calc(33.333% - 20px); /* Adjust width for 3 images with some margin */
+            min-width: 150px; /* Minimum width before wrapping or shrinking too much */
+            height: 150px; /* Adjust as needed */
+            background-color: #e0e6eb; /* Light blue-gray placeholder */
+            border: 2px dashed #87CEEB; /* Light blue dashed border */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5a7a8c; /* Muted blue text for placeholder */
+            font-size: 0.9em;
+            text-align: center;
+            border-radius: 6px;
+            margin: 10px; /* Add some margin around placeholders */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+        .agb-text {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9; /* Very light gray for text section */
+            border: 1px solid #e0e0e0; /* Light gray border */
+            border-radius: 6px;
+        }
+
+        .agb-text h2 {
+            color: #3498db; /* Light blue for subheadings */
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .agb-text h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .agb-text p, .agb-text ul {
+            margin-bottom: 1em;
+            color: #555; /* Medium gray for paragraph text */
+        }
+
+        .agb-text ul {
+            padding-left: 20px;
+        }
+
+        .agb-text li {
+            margin-bottom: 0.5em;
+        }
+
+        .last-updated {
+            margin-top: 30px;
+            font-style: italic;
+            color: #777;
+            text-align: center;
+        }
+        .gallery-title {
+            text-align: center;
+            color: #3498db; /* Light blue */
+            margin-bottom: 20px;
+            font-size: 1.2em; /* Made smaller, adjust as needed */
+        }
+        .separator-lines { /* Style for the two lines */
+            width: 100%;
+            border-top: 1px solid #e0e0e0; /* First line */
+            border-bottom: 1px solid #e0e0e0; /* Second line */
+            padding: 5px 0; /* Increased space between the two lines */
+            margin-bottom: 20px; /* Space below the lines, before the next element */
+        }
+
+        /* Lightbox Styles */
+        .lightbox-overlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Darker background */
+            z-index: 1000; /* Ensure it's on top */
+        }
+
+        .lightbox-image-container {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 98vw;  /* Made even bigger - up to 98% of viewport width */
+            max-height: 98vh; /* Made even bigger - up to 98% of viewport height */
+            z-index: 1001; /* Above overlay */
+        }
+
+        #lightbox-image {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Preserve aspect ratio, fit within container */
+            border: 3px solid white;
+            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+        }
+
+        /* New Page Close Button for darkening effect */
+        .page-close-button {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1002; /* Ensure it's above the overlay */
+            text-decoration: none; /* Remove underline if using <a> tag */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MAG Rechna AGB</h1>
+        <div class="separator-lines"></div> <!-- Lines added here -->
+
+        <h2 class="gallery-title">Rechengrundlage für App</h2>
+
+        <div class="image-gallery">
+            <img src="img/fo1.jpg" alt="Formelbild 1" class="image-placeholder gallery-image">
+            <img src="img/fo2.jpg" alt="Formelbild 2" class="image-placeholder gallery-image">
+            <img src="img/fo3.jpg" alt="Formelbild 3" class="image-placeholder gallery-image">
+        </div>
+
+        <div class="agb-text">
+            <h2>Allgemeine Geschäftsbedingungen (AGB) für die App "MAG Rechna"</h2>
+
+            <p>Diese Allgemeinen Geschäftsbedingungen (nachfolgend "AGB") regeln die Nutzung der mobilen Applikation "MAG Rechna" (nachfolgend "App"), angeboten durch Home Studio (nachfolgend "Anbieter"). Mit der Installation und Nutzung der App erklären Sie sich mit diesen AGB einverstanden.</p>
+
+            <h3>§ 1 Geltungsbereich</h3>
+            <p>Diese AGB gelten für alle Nutzer der App "MAG Rechna". Entgegenstehende oder von diesen AGB abweichende Bedingungen des Nutzers erkennt der Anbieter nicht an, es sei denn, ihrer Geltung wurde ausdrücklich schriftlich zugestimmt.</p>
+
+            <h3>§ 2 Leistungsbeschreibung und Vertragsgegenstand</h3>
+            <p>
+                1. Die App "MAG Rechna" dient zur Berechnung der Größe und des Vordrucks von Membranausdehnungsgefäßen (MAG) basierend auf vom Nutzer eingegebenen Parametern und in der websit hinterlegten Berechnungsformeln.
+            </p>
+            <p>
+                2. Die Ergebnisse der Berechnungen dienen ausschließlich Informationszwecken und stellen keine fachliche Beratung oder Planung dar. Der Nutzer ist für die korrekte Eingabe der Daten sowie für die Überprüfung und Interpretation der Ergebnisse selbst verantwortlich.
+            </p>
+            <p>
+                3. Der Anbieter übernimmt keine Gewähr für die Richtigkeit, Vollständigkeit oder Aktualität der durch die App bereitgestellten Berechnungen und Informationen. Für eine verbindliche Auslegung und Planung ist stets die Konsultation qualifizierter Fachleute (z.B. Heizungsinstallateur, Ingenieur) erforderlich.
+            </p>
+
+            <h3>§ 3 Nutzungsrechte und -pflichten des Nutzers</h3>
+            <p>
+                1. Der Anbieter räumt dem Nutzer ein nicht-ausschließliches, nicht übertragbares Recht ein, die App für den persönlichen Gebrauch gemäß diesen AGB zu nutzen.
+            </p>
+            <p>
+                2. Der Nutzer verpflichtet sich, die App sachgemäß zu verwenden und keine Handlungen vorzunehmen, die die Funktionsfähigkeit der App oder der zugrundeliegenden Systeme beeinträchtigen könnten.
+            </p>
+            <p>
+                3. Der Nutzer ist für die Richtigkeit der von ihm eingegebenen Daten verantwortlich. Fehlerhafte Eingaben können zu fehlerhaften Berechnungsergebnissen führen.
+            </p>
+
+            <h3>§ 4 Werbung durch Drittanbieter (z.B. Google AdMob)</h3>
+            <p>
+                1. Die App "MAG Rechna" finanziert sich teilweise durch die Einblendung von Werbung Dritter (z.B. über Google AdMob).
+            </p>
+            <p>
+                2. Durch die Nutzung der App stimmt der Nutzer der Anzeige von Werbung zu. Diese Werbung kann auf den Interessen des Nutzers basieren.
+            </p>
+            <p>
+                3. Die Werbeanbieter können Technologien verwenden, um Daten über die Nutzung der App und die Interaktion mit der Werbung zu sammeln (z.B. Cookies, Werbe-IDs). Dies dient der Auslieferung personalisierter Werbung und der Erfolgsmessung. Der Anbieter hat keinen direkten Einfluss auf die Datenerhebung durch die Werbenetzwerke.
+            </p>
+            <p>
+                4. Für Informationen darüber, wie Google Daten verwendet, wenn Sie Apps oder Websites unserer Partner nutzen, besuchen Sie bitte: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">policies.google.com/technologies/partner-sites</a>. Informationen zum Datenschutz bei Google finden Sie unter <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.
+            </p>
+
+            <h3>§ 5 Haftungsbeschränkung</h3>
+            <p>
+                1. Der Anbieter haftet unbeschränkt nur für Vorsatz und grobe Fahrlässigkeit. Für leichte Fahrlässigkeit haftet der Anbieter nur bei Verletzung einer wesentlichen Vertragspflicht (Kardinalpflicht), deren Erfüllung die ordnungsgemäße Durchführung des Vertrags überhaupt erst ermöglicht und auf deren Einhaltung der Nutzer regelmäßig vertrauen darf. In diesem Fall ist die Haftung auf den vertragstypischen, vorhersehbaren Schaden begrenzt.
+            </p>
+            <p>
+                2. Der Anbieter übernimmt keine Haftung für die Richtigkeit, Vollständigkeit oder Eignung der mit der App durchgeführten Berechnungen für einen bestimmten Zweck. Jegliche Entscheidungen, die der Nutzer auf Basis der App-Ergebnisse trifft, erfolgen auf eigenes Risiko.
+            </p>
+            <p>
+                3. Der Anbieter haftet nicht für Schäden, die aus der unsachgemäßen Nutzung der App oder aus fehlerhaften Eingaben des Nutzers resultieren.
+            </p>
+            <p>
+                4. Der Anbieter haftet nicht für den Inhalt, die Verfügbarkeit oder die Datenschutzpraktiken von Werbeanzeigen Dritter oder verlinkten Webseiten.
+            </p>
+            <p>
+                5. Die vorstehenden Haftungsbeschränkungen gelten nicht bei Verletzung von Leben, Körper oder Gesundheit, für einen Mangel nach Übernahme einer Garantie für die Beschaffenheit des Produktes und bei arglistig verschwiegenen Mängeln. Die Haftung nach dem Produkthaftungsgesetz bleibt unberührt.
+            </p>
+
+            <h3>§ 6 Datenschutz</h3>
+            <p>
+                1. Der Schutz Ihrer persönlichen Daten ist uns wichtig. Informationen zur Erhebung, Verarbeitung und Nutzung personenbezogener Daten im Rahmen der App-Nutzung finden Sie in unserer separaten Datenschutzerklärung.
+            </p>
+            <p>
+                2. Bitte beachten Sie, dass für die Anzeige von Werbung durch Drittanbieter wie Google AdMob Daten gemäß deren Datenschutzbestimmungen verarbeitet werden können (siehe § 4).
+            </p>
+            <p>
+                <strong>Hinweis:</strong> Sie müssen eine separate, detaillierte Datenschutzerklärung (Privacy Policy) erstellen und von hier aus darauf verlinken. Diese ist besonders wichtig im Hinblick auf GDPR/DSGVO.
+            </p>
+
+            <h3>§ 7 Änderungen der AGB</h3>
+            <p>
+                1. Der Anbieter behält sich das Recht vor, diese AGB jederzeit mit Wirkung für die Zukunft zu ändern oder zu ergänzen, sofern dies für den Nutzer zumutbar ist.
+            </p>
+            <p>
+                2. Über Änderungen wird der Nutzer in geeigneter Weise (z.B. durch einen Hinweis in der App oder per E-Mail, falls erhoben) informiert. Die Änderungen gelten als genehmigt, wenn der Nutzer nicht innerhalb einer Frist von vier Wochen nach Bekanntgabe der Änderung schriftlich widerspricht oder die App nach Ablauf der Frist weiter nutzt. Auf diese Rechtsfolge wird der Anbieter in der Änderungsmitteilung gesondert hinweisen.
+            </p>
+
+            <h3>§ 8 Schlussbestimmungen</h3>
+            <p>
+                1. Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts.
+            </p>
+            <p>
+                2. Sollten einzelne Bestimmungen dieser AGB ganz oder teilweise unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Anstelle der unwirksamen Bestimmung tritt eine Regelung, die dem wirtschaftlichen Zweck der unwirksamen Bestimmung am nächsten kommt.
+            </p>
+            <p>
+                3. Sofern es sich beim Nutzer um einen Kaufmann, eine juristische Person des öffentlichen Rechts oder um ein öffentlich-rechtliches Sondervermögen handelt, ist Gerichtsstand für alle Streitigkeiten aus Vertragsverhältnissen zwischen dem Nutzer und dem Anbieter der Sitz des Anbieters.
+            </p>
+
+            <p class="last-updated">
+                Diese AGB wurden zuletzt aktualisiert am: 02.06.2025
+            </p>
+        </div>
+    </div>
+
+    <!-- Lightbox HTML Structure -->
+    <div id="lightbox-overlay" class="lightbox-overlay"></div>
+    <div id="lightbox-image-container" class="lightbox-image-container">
+        <img id="lightbox-image" src="" alt="Vergrößertes Bild">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const galleryImages = document.querySelectorAll('.gallery-image');
+            const lightboxOverlay = document.getElementById('lightbox-overlay');
+            const lightboxImageContainer = document.getElementById('lightbox-image-container');
+            const lightboxImage = document.getElementById('lightbox-image');
+
+            galleryImages.forEach(image => {
+                image.addEventListener('click', function () {
+                    lightboxImage.src = this.src; // Set the source of the lightbox image
+                    lightboxImage.alt = this.alt; // Set the alt text for accessibility
+                    lightboxOverlay.style.display = 'block';
+                    lightboxImageContainer.style.display = 'block';
+                });
+            });
+
+            function closeLightbox() {
+                lightboxOverlay.style.display = 'none';
+                lightboxImageContainer.style.display = 'none';
+                lightboxImage.src = ""; // Clear the image source to prevent old image flashing
+            }
+
+            // Optional: Close lightbox when clicking on the overlay
+            lightboxOverlay.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>
