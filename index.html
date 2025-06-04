@@ -152,6 +152,19 @@
             z-index: 1002; /* Ensure it's above the overlay */
             text-decoration: none; /* Remove underline if using <a> tag */
         }
+
+        .bottom-image-placeholder {
+            width: 200px; /* Adjust as needed */
+            height: 150px; /* Adjust as needed */
+            background-color: #e0e6eb; /* Light blue-gray placeholder */
+            border: 2px dashed #87CEEB; /* Light blue dashed border */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5a7a8c; /* Muted blue text for placeholder */
+            margin: 30px auto; /* Center it and add space */
+            border-radius: 6px;
+        }
     </style>
 </head>
 <body>
@@ -263,6 +276,9 @@
             </p>
         </div>
     </div>
+
+    <!-- Placeholder for bottom middle image -->
+    <div class="bottom-image-placeholder">Bottom Image Placeholder</div>
 
     <!-- Lightbox HTML Structure -->
     <div id="lightbox-overlay" class="lightbox-overlay"></div>
